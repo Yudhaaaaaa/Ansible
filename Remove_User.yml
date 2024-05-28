@@ -1,0 +1,8 @@
+---
+- name: Remove user from JPA group
+  hosts: all
+  become: yes
+  tasks:
+    - name: Remove user support from group JPA
+      command: gpasswd -d support JPA
+      ignore_errors: yes
